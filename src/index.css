@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-hot: #e11d48;
+}
+
+body {
+  margin: 0;
+  background-color: #050505;
+  color: white;
+  font-family: var(--font-sans);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #888888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hot-card {
+  background: linear-gradient(135deg, #4c0519 0%, #be123c 100%);
+  border: 1px solid #fb7185;
+}
+
+.grid-item {
+  background: #111;
+  border: 1px solid #222;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.grid-item:hover {
+  border-color: #444;
+  background: #161616;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Original marquee from previous design to keep marquee functional */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-reverse {
+  animation: marquee 25s linear infinite reverse;
+}
